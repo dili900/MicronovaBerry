@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Micronova Tasmota Driver</title>
+  <meta name="description" content="Micronova stove integration for Tasmota using Berry scripts." />
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 56px; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    h2 { margin-top: 32px; font-size: 1.25rem; }
+    p, li { color: #cbd5e1; }
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    code {
+      background: #1f2937;
+      color: #bfdbfe;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    a { color: #93c5fd; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .cmd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    footer { margin-top: 34px; color: #94a3b8; font-size: .95rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Micronova Tasmota Driver</h1>
+    <p>Berry script integration for Micronova-based pellet stoves on Tasmota.</p>
+
+    <div class="card">
+      <strong>Main files</strong>
+      <ul>
+        <li><a href="Micronova.be">Micronova.be</a> (stable script)</li>
+        <li><a href="MicronovaLatest.be">MicronovaLatest.be</a> (latest script)</li>
+        <li><a href="EVENT_CODES.md">EVENT_CODES.md</a> (event/error code reference)</li>
+      </ul>
+    </div>
+
+    <h2>Quick install</h2>
+    <ol>
+      <li>Open Tasmota Web UI on your device.</li>
+      <li>Go to <em>Console</em> and enable Berry scripting if needed.</li>
+      <li>Upload/copy <code>Micronova.be</code> into your script storage.</li>
+      <li>Restart the device and verify JSON publish has a <code>Stove</code> object.</li>
+    </ol>
+
+    <h2>Available commands</h2>
+    <div class="grid">
+      <div class="card"><div class="cmd">StovePower ON|OFF</div></div>
+      <div class="card"><div class="cmd">TargetWaterTemp &lt;value&gt;</div></div>
+      <div class="card"><div class="cmd">TargetAmbientTemp &lt;value&gt;</div></div>
+      <div class="card"><div class="cmd">TargetPower &lt;1..5&gt;</div></div>
+      <div class="card"><div class="cmd">StoveWriteEEPROM &lt;addr&gt; &lt;value&gt;</div></div>
+      <div class="card"><div class="cmd">StoveWriteRAM &lt;addr&gt; &lt;value&gt;</div></div>
+      <div class="card"><div class="cmd">StoveReadEEPROM &lt;addr&gt;</div></div>
+      <div class="card"><div class="cmd">StoveReadRAM &lt;addr&gt;</div></div>
+    </div>
+
+    <h2>Telemetry</h2>
+    <p>Published JSON contains a <code>Stove</code> object (live/target values) and periodic <code>StoveEEPROM</code> snapshots.</p>
+
+    <footer>
+      Maintained by the Micronova community • Source available for public use.
+    </footer>
+  </main>
+</body>
+</html>
