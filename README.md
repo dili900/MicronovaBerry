@@ -16,7 +16,8 @@ I started from:
 
 Those projects were too complex for my needs. I also tried an `Arduino Uno R3 WiFi`, but due to timing issues with `serialSend`, I switched to an `ESP32-C3` board.
 
-The Micronova stove board uses one wire for serial communication. I bridged `TX` and `RX` through a diode to block stove-to-`TX` signaling while still allowing stove-to-`RX` communication. When sending commands on `TX`, the ESP32 also receives an echo of transmitted bytes. The Berry script handles this echo correctly and ignores those echoed bytes.
+The Micronova stove board uses one wire for serial communication with 5v.
+ I bridged `TX` and `RX` through a diode to block stove-to-`TX` signaling while still allowing stove-to-`RX` communication. When sending commands on `TX`, the ESP32 also receives an echo of transmitted bytes. The Berry script handles this echo correctly and ignores those echoed bytes.
 
 Thanks to https://github.com/LukasGossmann/MetaboCAS for the diode idea.
 
@@ -25,9 +26,14 @@ I am not sure if this is secure for long-term use, because the ESP32 is 3.3V. Fr
 I connected everything together, and it has been working well for approximately one month.
 Any suggestions are appreciated.
 
+
 ![MainPage](image.png)
 ![Stove setting](image-3.png)
 ![Timer settings](image-2.png)
+ 
+Todo list:
+- Find the RAM address that holds water pump ON state (if available).
+- Recognize more EEPROM addresses.
 
 ## Main runtime commands
 
@@ -44,4 +50,3 @@ Any suggestions are appreciated.
 ## Safety disclaimer
 
 Changing stove EEPROM values can affect operation and safety. Use tested values only and keep a backup of known-good settings.
-
