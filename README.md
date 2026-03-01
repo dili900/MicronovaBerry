@@ -24,9 +24,10 @@ I am not sure if this is secure for long-term use, because the ESP32 is 3.3V. Fr
 
 I connected everything together, and it has been working well for approximately one month.
 Any suggestions are appreciated.
-![Wiring overview](image.png)
-![Prototype board](image-3.png)
-![Installed setup](image-2.png)
+
+![MainPage](image.png)
+![Stove setting](image-3.png)
+![Timer settings](image-2.png)
 
 ## Main runtime commands
 
@@ -43,3 +44,4 @@ Any suggestions are appreciated.
 ## Safety disclaimer
 
 Changing stove EEPROM values can affect operation and safety. Use tested values only and keep a backup of known-good settings.
+
