@@ -102,7 +102,7 @@ class StoveClassGUI
             stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_CURRENT_OUTPUT_POWER] ,         #6
             stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_STOVE_REAMING_TIME_MIN] ,       #7
             stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_STOVE_REAMING_TIME_SEC] ,       #7
-            (stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_FUMES_FAN]+25)*10 ,                    #7
+            (stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_FUMES_FAN] == 0 ? 0 : (stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_FUMES_FAN]+25)*10) ,  #7
             stoveObj.StoveRAM[stoveObj.STOVE_ADDRESS_RAM_FUMES_TEMPERATURE] ,            #7
             stoveObj.StoveEEPROM[stoveObj.STOVE_ADDRESS_EEPROM_POWER_OUTPUT] ,           #10
             stoveObj.StoveEEPROM[stoveObj.STOVE_ADDRESS_EEPROM_WATER_TEMP] ,             #11
