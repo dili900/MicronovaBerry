@@ -551,7 +551,7 @@ var publish_eeprom_snapshot
             self.StoveRAM[self.STOVE_ADDRESS_RAM_PELLET_TIME]/10.0,              #3  
             self.stove_state_label() ,                                            #4
             self.StoveRAM[self.STOVE_ADDRESS_RAM_CURRENT_OUTPUT_POWER] ,         #5
-            (self.StoveRAM[self.STOVE_ADDRESS_RAM_FUMES_FAN]+25)*10 ,                    #6
+            (self.StoveRAM[self.STOVE_ADDRESS_RAM_FUMES_FAN] == 0 ? 0 : (self.StoveRAM[self.STOVE_ADDRESS_RAM_FUMES_FAN]+25)*10) , #6
             self.StoveRAM[self.STOVE_ADDRESS_RAM_FUMES_TEMPERATURE] ,            #7
             self.StoveEEPROM[self.STOVE_ADDRESS_EEPROM_POWER_OUTPUT] ,           #8
             self.StoveEEPROM[self.STOVE_ADDRESS_EEPROM_WATER_TEMP] ,             #9
