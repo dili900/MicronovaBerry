@@ -52,7 +52,11 @@ class StoveClassGUI
     end
 
     def arg_time(name)
-        return stoveObj.int_from_time(webserver.arg(name))
+        var val = webserver.arg(name)
+        if val.lower() == "off"
+            return 144
+        end
+        return stoveObj.int_from_time(val)
     end
 
     def write_weekday_program(mon_addr, tue_addr, wed_addr, thu_addr, fri_addr, sat_addr, sun_addr,
